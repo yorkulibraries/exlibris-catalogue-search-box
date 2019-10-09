@@ -1,0 +1,10 @@
+/* =======================================
+   ====== WP Widgets Admin Settings ====== 
+   ======================================= */
+
+.elbsb-search-admin-area label, .elbsb-search-admin-area input {
+  width: 100%;
+}
+.elbsb-search-admin-area label {
+  font-weight: bold;
+}
