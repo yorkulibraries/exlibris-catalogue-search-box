@@ -1,7 +1,7 @@
 # ExLibris Catalogue Discovery Search Box: Wordpress Plugin
 
 ## About
-York University Libraries will be switching to ExLibris Alma/Primo Library Services Platform in Dec 2019. The need for replacing the search box arose, hence this widget-plugin and a way to help other members.
+York University Libraries will be switching to ExLibris Alma/Primo Library Services Platform in Dec 2019. The need for replacing the SIRSI search box arose, hence this widget-plugin. In addition, contributing back to help other members/users of ExLibris.
 
 ## Installation
 ### Git
@@ -15,19 +15,19 @@ York University Libraries will be switching to ExLibris Alma/Primo Library Servi
 2. login to wordpress backend -> Plugins -> Add new -> upload plugin -> select downloaded zip
 
 ## Setups
-**Once installed**, 
+### Once installed & activated, 
 
-For Page
+**For Page**
 
 1. Go to the landing page (Website-Backend->Pages->your-page)
 2. Insert Wordpress 5.x Block - Widget
 3. In the block select the ExLibris Search Box
 
-For Widget
+**For Widget**
 
 1. Widget area (appearences -> widgets -> Drag ExLibris to sidebar)
 
-###Fields to fill
+### Fields to fill ###
 
 
 | **Title:** ||
@@ -85,6 +85,10 @@ For Widget
 | **Default Value** | "" |
 | **Where to find** | This will add a class to div above main .search-container. You can also edit the styles directly in your css and get the class name from Browser Inspector (Right click on page -> Inspect).
 | **Required** | No |
+
+
+## DEV NOTE
+* Fork it for your institution or clone the widget and add css for button color for your institution. 
 
 ## TODO
 * Internationalization 
