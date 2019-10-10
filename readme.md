@@ -15,12 +15,6 @@ York University Libraries will be switching to ExLibris Alma/Primo Library Servi
 ## Setups
 ### Once installed & activated, 
 
-**For Page**
-
-1. Go to the landing page (Website-Backend->Pages->your-page)
-2. Insert Wordpress 5.x Block - Widget
-3. In the block select the ExLibris Search Box
-
 **For Widget**
 
 1. Widget area (appearences -> widgets -> Drag ExLibris to sidebar)
