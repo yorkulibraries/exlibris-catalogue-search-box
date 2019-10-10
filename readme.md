@@ -6,13 +6,11 @@ York University Libraries will be switching to ExLibris Alma/Primo Library Servi
 ## Installation
 ### Git
 
-1. cd to you /website-wp/wp-content/plugins directory
-2. git clone 
-3. login to wordpress backend -> Plugins -> ExLibris Catalogue Search Box -> Activate
+1. ```cd``` to you /website-wp/wp-content/plugins directory
+2. ```git clone https://github.com/yorkulibraries/exlibris-catalogue-search-box.git```
+3. change permission for webserver can read/write ```chown -R www-data:www-data exlibris-catalogue-search-box```
+3. login to Wordpress backend (wp-admin) -> Plugins -> ExLibris Catalogue Search Box -> Activate
 
-### Download Zip
-1. Download plugin from here as zip
-2. login to wordpress backend -> Plugins -> Add new -> upload plugin -> select downloaded zip
 
 ## Setups
 ### Once installed & activated, 
@@ -87,10 +85,12 @@ York University Libraries will be switching to ExLibris Alma/Primo Library Servi
 | **Required** | No |
 
 
-## DEV NOTE
-* Fork it for your institution or clone the widget and add css for button color for your institution. 
+## NOTE
+* Fork it for your institution or clone the widget and add styling / css for button color of your institution. 
+* Please make sure you fill in all required fields as widget does not currently validate the values. Your search will not work if values are missing or incorrect. 
 
 ## TODO
+* Add Backend validation for Required Fields check. Currently no input = search will not work.
 * Internationalization 
 * Look into Advanced Search Box
 
