@@ -84,8 +84,10 @@ York University Libraries will be switching to ExLibris Alma/Primo Library Servi
 * Please make sure you fill in all required fields as widget does not currently validate the values. Your search will not work if values are missing or incorrect. 
 
 ## TODO
+* Create Wordpress 5.x Catalogue Search Block for inserting into page
 * Add Backend validation for Required Fields check. Currently no input = search will not work.
 * Internationalization 
+* Explore Downdown addition to the search bar
 * Look into Advanced Search Box
 
 ## References:
