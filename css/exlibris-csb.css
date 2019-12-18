@@ -18,7 +18,16 @@
     padding-left:5px;
     color: #333;
   }
+  .elbsb-search-container .omni-links a {
+    margin-left:5px;
+    margin-right:5px;
+  }
   
+/*  .elbsb-search-container .omni-links a:last-child {
+    text-align:right;
+    float:right;
+  }
+*/  
   .elbsb-search-container form {
     background: #fff;
     display: -ms-flexbox;
@@ -106,6 +115,7 @@
      ====== Medua Query for  Primo Search Box ====== 
      =============================================== */
 
+  /* Tablet */
   @media screen and (max-width: 992px) {
     .elbsb-search-container {
       margin: 25px 20px 25px 0;
@@ -116,12 +126,30 @@
     }
   }
 
+  /* Phone */
   @media screen and (max-width: 767px) {
 
+    .mobile_hide {
+      display: none;
+    }
+    .elbsb-search-container .omni-logo {
+/*      margin-left:auto;
+      margin-right:auto;
+      display:block;
+*/  
+      margin-left: 25%;
+      margin-right: 25%;
+      
+    }
+    
     .elbsb-search-container {
       margin: 25px 20px 25px 0;
     }
-
+    .elbsb-search-container .omni-links a {
+      display:inline-block;
+      width: 45%;
+      text-align: center;
+    }    
     .elbsb-search-container form {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;

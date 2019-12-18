@@ -62,6 +62,7 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
     $omni_faq           = $instance['omni_faq'];
     $omni_guide         = $instance['omni_guide'];
     $research_guides    = $instance['research_guides'];
+    $advanced_search_url = $instance['advanced_search_url'];
     $custom_css_class   = $instance['custom_css_class'];
     
     
@@ -106,19 +107,19 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
           </div>
         </form>
         <div class="omni-links">
-          <?php if($omni_faq != "") { ?>
-            <a href="<?php echo $omni_faq ?>">Omni FAQ</a>
-          <?php } ?>
-          <?php if($omni_guide != "") { ?>
-             | <a href="<?php echo $omni_guide ?>">Omni Guide</a>
+          <?php if($advanced_search_url != "") { ?>
+            <a href="<?php echo $advanced_search_url ?>">Advanced Search </a>
           <?php } ?>
           <?php if($research_guides != "") { ?>
-             | <a href="<?php echo $research_guides ?>">Research Guides</a>
+             <span class="mobile_hide">|</span> <a href="<?php echo $research_guides ?>">Research Guides</a>
           <?php } ?>
-          <!-- <a href="https://www.library.yorku.ca/web/omni-faq/">Omni FAQ</a>
-           | <a href="https://researchguides.library.yorku.ca/omni">Omni Guide</a>
-           | <a href="https://researchguides.library.yorku.ca">Research Guides</a> -->
-           
+          <?php if($omni_faq != "") { ?>
+             <span class="mobile_hide">|</span> <a href="<?php echo $omni_faq ?>">Omni FAQ</a>
+          <?php } ?>
+          <?php if($omni_guide != "") { ?>
+             <span class="mobile_hide">|</span> <a href="<?php echo $omni_guide ?>">Omni Guide</a>
+          <?php } ?>
+          <!-- <a href="<?php echo $discovery_url + 'vid=' + $institution_id ?> &tab=Everything&search_scope=MyInst_and_CI&mode=advanced&displayMode=full&bulkSize=10&highlight=true&dum=true&query=any,contains,&displayField=all&pcAvailabiltyMode=true&lang=en">Test Adv.</a> -->
         </div>
     </div>
   </div>
@@ -139,6 +140,7 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
     $omni_faq           = ! empty( $instance['omni_faq'] ) ? $instance['omni_faq'] : '';
     $omni_guide         = ! empty( $instance['omni_guide'] ) ? $instance['omni_guide'] : '';
     $research_guides    = ! empty( $instance['research_guides'] ) ? $instance['research_guides'] : ''; 
+    $advanced_search_url = ! empty( $instance['advanced_search_url'] ) ? $instance['advanced_search_url'] : ''; 
     
     ?>
     <div class="elbsb-search-admin-area">
@@ -171,6 +173,10 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
       <p>
         <label for="<?php echo $this->get_field_id( 'placehoder_text' ); ?>">Search Box Placeholder:</label>
         <input type="text" id="<?php echo $this->get_field_id( 'placehoder_text' ); ?>" name="<?php echo $this->get_field_name( 'placehoder_text' ); ?>" value="<?php echo esc_attr( $placehoder_text ); ?>" />
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id( 'advanced_search_url' ); ?>">Adv. Search URL:</label>
+        <input type="text" id="<?php echo $this->get_field_id( 'advanced_search_url' ); ?>" name="<?php echo $this->get_field_name( 'advanced_search_url' ); ?>" value="<?php echo esc_attr( $advanced_search_url ); ?>" />
       </p>
       <p>
         <label for="<?php echo $this->get_field_id( 'omni_faq' ); ?>">Omni FAQ:</label>
@@ -206,7 +212,8 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
     $instance[ 'placehoder_text' ]    = strip_tags( $new_instance[ 'placehoder_text' ] );
     $instance[ 'omni_faq' ]           = strip_tags( $new_instance[ 'omni_faq' ] );
     $instance[ 'omni_guide' ]         = strip_tags( $new_instance[ 'omni_guide' ] );
-    $instance[ 'research_guides' ]    = strip_tags( $new_instance[ 'research_guides' ] );    
+    $instance[ 'research_guides' ]    = strip_tags( $new_instance[ 'research_guides' ] );   
+    $instance[ 'advanced_search_url' ]    = strip_tags( $new_instance[ 'advanced_search_url' ] );
     $instance[ 'custom_css_class' ]   = strip_tags( $new_instance[ 'custom_css_class' ] );
     return $instance;
   }
