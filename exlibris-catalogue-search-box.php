@@ -59,6 +59,9 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
     
     $unique_primo_query = $instance['unique_primo_query'];    
     $placehoder_text    = $instance['placehoder_text'];
+    $omni_faq           = $instance['omni_faq'];
+    $omni_guide         = $instance['omni_guide'];
+    $research_guides    = $instance['research_guides'];
     $custom_css_class   = $instance['custom_css_class'];
     
     
@@ -112,9 +115,9 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
           <?php if($research_guides != "") { ?>
              | <a href="<?php echo $research_guides ?>">Research Guides</a>
           <?php } ?>
-          <a href="https://www.library.yorku.ca/web/omni-faq/">Omni FAQ</a>
+          <!-- <a href="https://www.library.yorku.ca/web/omni-faq/">Omni FAQ</a>
            | <a href="https://researchguides.library.yorku.ca/omni">Omni Guide</a>
-           | <a href="https://researchguides.library.yorku.ca">Research Guides</a>
+           | <a href="https://researchguides.library.yorku.ca">Research Guides</a> -->
            
         </div>
     </div>
