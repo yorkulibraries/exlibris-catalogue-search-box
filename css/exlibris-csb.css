@@ -8,6 +8,17 @@
     margin: 25px auto;
   }
   
+  .elbsb-search-container .omni-logo {
+    padding-bottom: 10px;
+  }
+
+  .elbsb-search-container .omni-links {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:5px;
+    color: #333;
+  }
+  
   .elbsb-search-container form {
     background: #fff;
     display: -ms-flexbox;

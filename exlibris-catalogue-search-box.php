@@ -67,6 +67,7 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
   <!-- echo with user defined css class -->
   <div class="<?php echo $custom_css_class ?>"> 
     <div class="elbsb-search-container">
+        <img src="<?php echo plugins_url('Omni-Single-RGB.svg', __FILE__) ?>" width="150px;" class="omni-logo"/>
         <!-- url: https://ocul-yor.primo.exlibrisgroup.com/discovery/search -->
         <form id="simple" name="searchForm" method="get" target="_self" class="elbsb-search-form" action="<?php echo $discovery_url ?>" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo('<?php echo $unique_primo_query ?>')" >
           <!-- Customizable Parameters -->
@@ -101,6 +102,21 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
             <input id="go" title="Search" onclick="searchPrimo('<?php echo $unique_primo_query ?>')" type="button" value="Search" alt="Search">
           </div>
         </form>
+        <div class="omni-links">
+          <?php if($omni_faq != "") { ?>
+            <a href="<?php echo $omni_faq ?>">Omni FAQ</a>
+          <?php } ?>
+          <?php if($omni_guide != "") { ?>
+             | <a href="<?php echo $omni_guide ?>">Omni Guide</a>
+          <?php } ?>
+          <?php if($research_guides != "") { ?>
+             | <a href="<?php echo $research_guides ?>">Research Guides</a>
+          <?php } ?>
+          <a href="https://www.library.yorku.ca/web/omni-faq/">Omni FAQ</a>
+           | <a href="https://researchguides.library.yorku.ca/omni">Omni Guide</a>
+           | <a href="https://researchguides.library.yorku.ca">Research Guides</a>
+           
+        </div>
     </div>
   </div>
     
@@ -116,7 +132,10 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
     $tab_code           = ! empty( $instance['tab_code'] ) ? $instance['tab_code'] : 'Everything'; 
     $search_scope       = ! empty( $instance['search_scope'] ) ? $instance['search_scope'] : 'MyInst_and_CI'; 
     $unique_primo_query = ! empty( $instance['unique_primo_query'] ) ? $instance['unique_primo_query'] : $widget_id; 
-    $placehoder_text    = ! empty( $instance['placehoder_text'] ) ? $instance['placehoder_text'] : ''; 
+    $placehoder_text    = ! empty( $instance['placehoder_text'] ) ? $instance['placehoder_text'] : '';
+    $omni_faq           = ! empty( $instance['omni_faq'] ) ? $instance['omni_faq'] : '';
+    $omni_guide         = ! empty( $instance['omni_guide'] ) ? $instance['omni_guide'] : '';
+    $research_guides    = ! empty( $instance['research_guides'] ) ? $instance['research_guides'] : ''; 
     
     ?>
     <div class="elbsb-search-admin-area">
@@ -151,6 +170,18 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
         <input type="text" id="<?php echo $this->get_field_id( 'placehoder_text' ); ?>" name="<?php echo $this->get_field_name( 'placehoder_text' ); ?>" value="<?php echo esc_attr( $placehoder_text ); ?>" />
       </p>
       <p>
+        <label for="<?php echo $this->get_field_id( 'omni_faq' ); ?>">Omni FAQ:</label>
+        <input type="text" id="<?php echo $this->get_field_id( 'omni_faq' ); ?>" name="<?php echo $this->get_field_name( 'omni_faq' ); ?>" value="<?php echo esc_attr( $omni_faq ); ?>" />
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id( 'omni_guide' ); ?>">Omni Guide:</label>
+        <input type="text" id="<?php echo $this->get_field_id( 'omni_guide' ); ?>" name="<?php echo $this->get_field_name( 'omni_guide' ); ?>" value="<?php echo esc_attr( $omni_guide ); ?>" />
+      </p>
+      <p>
+        <label for="<?php echo $this->get_field_id( 'research_guides' ); ?>">Research Guides:</label>
+        <input type="text" id="<?php echo $this->get_field_id( 'research_guides' ); ?>" name="<?php echo $this->get_field_name( 'research_guides' ); ?>" value="<?php echo esc_attr( $research_guides ); ?>" />
+      </p>
+      <p>
         <label for="<?php echo $this->get_field_id( 'custom_css_class' ); ?>">Custom CSS Class:</label>
         <input type="text" id="<?php echo $this->get_field_id( 'custom_css_class' ); ?>" name="<?php echo $this->get_field_name( 'custom_css_class' ); ?>" value="<?php echo esc_attr( $custom_css_class ); ?>" />
       </p>
@@ -170,6 +201,9 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
     $instance[ 'search_scope' ]       = strip_tags( $new_instance[ 'search_scope' ] );
     $instance[ 'unique_primo_query' ] = strip_tags( $new_instance[ 'unique_primo_query' ] );
     $instance[ 'placehoder_text' ]    = strip_tags( $new_instance[ 'placehoder_text' ] );
+    $instance[ 'omni_faq' ]           = strip_tags( $new_instance[ 'omni_faq' ] );
+    $instance[ 'omni_guide' ]         = strip_tags( $new_instance[ 'omni_guide' ] );
+    $instance[ 'research_guides' ]    = strip_tags( $new_instance[ 'research_guides' ] );    
     $instance[ 'custom_css_class' ]   = strip_tags( $new_instance[ 'custom_css_class' ] );
     return $instance;
   }
