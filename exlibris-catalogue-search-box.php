@@ -67,7 +67,7 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
   <!-- echo with user defined css class -->
   <div class="<?php echo $custom_css_class ?>"> 
     <div class="elbsb-search-container">
-        <img src="<?php echo plugins_url('Omni-Single-RGB.svg', __FILE__) ?>" width="150px;" class="omni-logo"/>
+        <img src="<?php echo plugins_url('images/Omni-Single-RGB.svg', __FILE__) ?>" width="150px;" class="omni-logo"/>
         <!-- url: https://ocul-yor.primo.exlibrisgroup.com/discovery/search -->
         <form id="simple" name="searchForm" method="get" target="_self" class="elbsb-search-form" action="<?php echo $discovery_url ?>" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo('<?php echo $unique_primo_query ?>')" >
           <!-- Customizable Parameters -->
