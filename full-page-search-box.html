@@ -1,3 +1,16 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Script that converts the query string into valid parameter -->
+<script type="text/javascript">
+function searchPrimo() {
+document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+document.forms["searchForm"].submit();
+}
+</script>
+</head>
+<body>
+<style type="text/css">
   /* ===========================
    ===== Primo Search Box ====
    =========================== */
@@ -156,3 +169,50 @@
       width: 100%;
     }
   }
+</style>
+
+<div class="search-container">
+    <form id="simple" name="searchForm" method="get" target="_self" class="search-form" action="https://ocul-yor.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()" >
+    <div class="form-content">
+        <!-- Customizable Parameters -->
+
+        <!-- ALMA ID: OCUL_YOR -->
+        <input type="hidden" name="vid" value="01OCUL_YOR:YOR_DEFAULT">
+
+        <!-- OCULDiscoveryNetwork alternative for just YUL + Network -->
+        <input type="hidden" name="tab" value="Everything">
+
+        <!-- 
+          - Everything = MyInst_and_CI 
+          - OCULDiscoveryNetwork = OCULDiscoveryNetwork
+        -->
+        <input type="hidden" name="search_scope" value="MyInst_and_CI">
+        <input type="hidden" name="mode" value="basic">
+
+        <!-- Fixed parameters -->
+        <input type="hidden" name="displayMode" value="full">
+        <input type="hidden" name="bulkSize" value="10">
+        <input type="hidden" name="highlight" value="true">
+        <input type="hidden" name="dum" value="true">
+        <input type="hidden" name="query" id="primoQuery">
+        <input type="hidden" name="displayField" value="all">
+        <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+        <input type="hidden" name="pcAvailabiltyMode" value="true">
+        <div class="search-field query-box">
+          <input type="text" id="primoQueryTemp" value="" size="35" placeholder="Search our the library collection">
+        </div>
+        <div class="search-field search-button-box">
+          <!-- Search Button -->
+          <input id="go" title="Search" onclick="searchPrimo()" type="button" value="Search" alt="Search">
+        </div>
+      </div>
+    </form>
+    <div class="omni-links">
+      | <a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_YOR:YOR_DEFAULT&tab=Everything&search_scope=MyInst_and_CI&mode=advanced&displayMode=full&bulkSize=10&highlight=true&dum=true&query=any,contains,&displayField=all&pcAvailabiltyMode=true&lang=en">Advanced Search</a>
+      | <a href="https://researchguides.library.yorku.ca/">Research Guides</a>
+      | <a href="https://www.library.yorku.ca/web/omni-faq/">Omni FAQ</a>
+      | <a href="https://researchguides.library.yorku.ca/omni">Omni Guide</a> |
+    </div>
+  </div>
+</body>
+</html>

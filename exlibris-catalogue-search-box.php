@@ -108,18 +108,17 @@ class elbsb_Catalogue_Search_Box_Widget extends WP_Widget {
         </form>
         <div class="omni-links">
           <?php if($advanced_search_url != "") { ?>
-            <a href="<?php echo $advanced_search_url ?>">Advanced Search </a>
+            | <a href="<?php echo $advanced_search_url ?>">Advanced Search </a>
           <?php } ?>
           <?php if($research_guides != "") { ?>
-             <span class="mobile_hide">|</span> <a href="<?php echo $research_guides ?>">Research Guides</a>
+            | <a href="<?php echo $research_guides ?>">Research Guides</a>
           <?php } ?>
           <?php if($omni_faq != "") { ?>
-             <span class="mobile_hide">|</span> <a href="<?php echo $omni_faq ?>">Omni FAQ</a>
+            | <a href="<?php echo $omni_faq ?>">Omni FAQ</a>
           <?php } ?>
           <?php if($omni_guide != "") { ?>
-             <span class="mobile_hide">|</span> <a href="<?php echo $omni_guide ?>">Omni Guide</a>
+            | <a href="<?php echo $omni_guide ?>">Omni Guide</a> |
           <?php } ?>
-          <!-- <a href="<?php echo $discovery_url + 'vid=' + $institution_id ?> &tab=Everything&search_scope=MyInst_and_CI&mode=advanced&displayMode=full&bulkSize=10&highlight=true&dum=true&query=any,contains,&displayField=all&pcAvailabiltyMode=true&lang=en">Test Adv.</a> -->
         </div>
     </div>
   </div>
